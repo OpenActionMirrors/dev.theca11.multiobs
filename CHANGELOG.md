@@ -2,6 +2,17 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.2] - 2025-12-31
+
+### Added
+
+-   DRM compatibility for Elgato Marketplace
+
+### Fixed
+
+-   Stateless actions incorrectly setting state different than 0
+-   Category icon filename having incorrect casing
+
 ## [0.8.1] - 2025-10-05
 
 ### Fixed
