@@ -131,7 +131,12 @@ export abstract class AbstractBaseRequestAction<T extends Record<string, unknown
 	}
 }
 
-export { AbstractBaseRequestAction as AbstractStatelessRequestAction };
+export abstract class AbstractStatelessRequestAction<T extends Record<string, unknown>> extends AbstractBaseRequestAction<T> {
+
+	override _updateSDState() {
+		return;
+	}
+}
 
 export abstract class AbstractStatefulRequestAction<T extends Record<string, unknown>, U extends keyof OBSEventTypes> extends AbstractBaseRequestAction<T> {
 	constructor(UUID: string, params: PartiallyRequired<ConstructorParams, 'statusEvent'>) {

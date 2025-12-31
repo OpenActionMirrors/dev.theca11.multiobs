@@ -264,7 +264,7 @@ export abstract class AbstractBaseWsAction<T extends Record<string, unknown>> ex
 	}
 
 	// Update SD state - active (0) only if all target states are active
-	private _updateSDState(context: string, contextData: ContextData<unknown>) {
+	protected _updateSDState(context: string, contextData: ContextData<unknown>) {
 		const { targetObs, states } = contextData;
 		const sdState = states.filter((_, i) => targetObs === 0 || targetObs - 1 === i).every(state => state === StateEnum.Active) ? 0 : 1;
 		$SD.setState(context, sdState);
@@ -438,7 +438,7 @@ export abstract class AbstractBaseWsAction<T extends Record<string, unknown>> ex
 	 * Rejects on fetching error.
 	 * @param socketSettings Action settings for the target OBS
 	 * @param socketIdx Index of the OBS instance to fetch settings from
-	 * @returns None/Active/Inactive
+	 * @returns Active/Inactive
 	 */
 	async fetchState?(socketSettings: SocketSettings<T>, socketIdx: number): Promise<Exclude<StateEnum, StateEnum.Unavailable | StateEnum.None>>;
 
