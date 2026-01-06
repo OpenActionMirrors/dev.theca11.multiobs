@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.3] - 2026-01-06
+
+### Fixed
+
+- Missing property in manifest file
+
+
 ## [0.8.2] - 2025-12-31
 
 ### Added
